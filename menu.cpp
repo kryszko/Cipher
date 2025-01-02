@@ -9,6 +9,7 @@ void menu()
     char x;
     std::cin >> x;
     std::string slowo;
+    std::string klucz;
     int dlugosc;
     
     switch(x)
@@ -16,7 +17,8 @@ void menu()
         case 'i':     
             std::cout << "i - podaj slowo" <<std::endl;
             std::cin >> slowo;
-            std::cout << encrypt(slowo);
+            std::cin >> klucz;
+            std::cout << encrypt(slowo, klucz);
             break;
         case 'w':
             std::cout << "keytostream"<<std::endl;

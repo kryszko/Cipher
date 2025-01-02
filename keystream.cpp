@@ -4,15 +4,11 @@
 #include "menu.h"
 
 
-std::string key_to_stream(std::string short_key, int key_long)
-{
-	std::string final_key;
-	for (size_t i = 0; i < key_long; ++i)
-	{
-		final_key.push_back(short_key[i % short_key.size()]);
-		std::cout << final_key << std::endl;
-
-	}
-
-	return final_key;
+std::string key_to_stream(const std::string& short_key, size_t key_lengh) {
+    std::string final_key;
+    for (size_t i = 0; i < key_lengh; ++i) {
+        char key_char = short_key[i % short_key.length()];
+        final_key += std::toupper(key_char) - 'A';
+    }
+    return final_key;
 }
